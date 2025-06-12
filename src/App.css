@@ -1,42 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.dashboard-active {
+  display: flex;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6; /* Light background for the overall page */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  height: 100vh; /* Make sidebar take full height */
+  overflow-y: auto; /* Allow scrolling if sidebar content overflows */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.sidebar li:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar li.active {
+  font-weight: bold;
+  color: blue;
+}
+
+.main {
+  flex-grow: 1; /* Allow main content to take up remaining space */
+  padding: 20px;
+  background-color: #f4f7f6; /* Consistent background for main content */
+  overflow-y: auto; /* Allow scrolling if main content overflows */
 }
 
 .card {
-  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
-.read-the-docs {
-  color: #888;
+/* Specific styles for tables within cards */
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.card th,
+.card td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.card th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Ensure map container within card has a fixed height for the map to render */
+.card .map-container {
+  height: 300px; /* Adjust as needed */
+  width: 100%;
+  margin-top: 10px;
 }
